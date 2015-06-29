@@ -1,0 +1,30 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: lsh_monster
+ * Date: 2015/5/10
+ * Time: 19:32
+ */
+$title = '帖子详情';
+$this->headTitle($title);
+$this->headLink()->prependStylesheet($this->basePath() . '/css/forum/detail.css');
+$this->headScript()->prependFile($this->basePath() . '/js/forum/detail.js');
+?>
+<a name="top" id="top"/>
+<div class='row'>
+    <div class="col-md-10 ">
+        <ol class="breadcrumb">
+            <li><a href="#">论坛</a></li>
+            <li class="active">帖子详细内容</li>
+        </ol>
+
+    </div>
+    <div class="icon col-md-2" style="position: fixed;top:300px;left: 80%">
+        <a class="btn btn-default btn-lg writeComment" href="#writeComment">
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+        </a><br/>
+        <a class="btn btn-default btn-lg" href="#top">
+            <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>
+        </a>
+    </div>
+</div>

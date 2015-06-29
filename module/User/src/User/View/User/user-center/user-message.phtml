@@ -1,0 +1,35 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: lsh_monster
+ * Date: 2015/5/10
+ * Time: 20:59
+ */
+$title = '用户信息';
+$this->headTitle($title);
+$this->headLink()->prependStylesheet($this->basePath() . '/css/user/centerIndex.css');
+$this->headScript()->prependFile($this->basePath() . '/js/forum/detail.js');
+?>
+<a name="top" id="top"/>
+
+<div class='row'>
+    <div class="col-md-2"></div>
+    <div class="col-md-5">
+        <a href="#"><img src="<?php echo $this->basePath('img/user.jpg') ?>" alt="..." class="userImg img-circle img-responsive"/></a>
+    </div>
+</div>
+<div class="row">
+    <div class=" col-md-10 userCenterNavRow">
+        <ul class="nav navbar-nav userCenterNav">
+            <li><a  class="active" href="<?php echo $this->url('UserCenter') ?>"><?php echo $this->translate('个人中心') ?></a></li>
+            <li><a href="<?php echo $this->url('UserCenter',['action'=>'userMessage']) ?>"><?php echo $this->translate('个人资料') ?></a></li>
+            <li><a href="<?php echo $this->url('UserCenter') ?>"><?php echo $this->translate('其他') ?></a></li>
+        </ul>
+
+    </div >
+    <div class="icon col-md-2" style="position: fixed;top:300px;left: 80%">
+        <a class="btn btn-default btn-lg" href="#top">
+            <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>
+        </a>
+    </div>
+</div>

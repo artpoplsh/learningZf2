@@ -8,7 +8,9 @@
 $title = '用户信息';
 $this->headTitle($title);
 $this->headLink()->prependStylesheet($this->basePath() . '/css/user/centerIndex.css');
-$this->headScript()->prependFile($this->basePath() . '/js/forum/detail.js');
+$this->headLink()->prependStylesheet($this->basePath() . '/css/user/user-message.css');
+
+$this->headScript()->prependFile($this->basePath() . '/js/user/user-message.js');
 ?>
 <a name="top" id="top"/>
 
@@ -31,5 +33,79 @@ $this->headScript()->prependFile($this->basePath() . '/js/forum/detail.js');
         <a class="btn btn-default btn-lg" href="#top">
             <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>
         </a>
+    </div>
+</div>
+
+<div class="row ">
+    <div class="col-md-10 userMesForm" id="save" style="display: none">
+            <span class="glyphicon glyphicon-ok spanIcon" aria-hidden="true" id="saveSpan">保存</span>
+
+        <form id="saveForm" method="post" action="<?php echo $this->url('UserCenter',['Controller'=>'UserCenter','action'=>'saveUserMessage']);?>">
+            <fieldset>
+                <legend>基本信息</legend>
+                &nbsp;&nbsp用户名：&nbsp;&nbsp;  <input type="text" value="<?php echo $this->userMessage->username;?>" name="username"/>
+                <br/><br/>
+                真实姓名：<input type="text" value="<?php echo $this->userMessage->realname;?>" name="realname"/>
+                <br/><br/>
+                &nbsp;&nbsp&nbsp;&nbsp;性别：&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="sexradio " class="form-control" type="radio" name="sex" value="M"
+                       <?php
+                       if($this->userMessage->sex=='M') echo '"selected"=selected';
+                       ?>
+                    >&nbsp;男&nbsp;&nbsp;&nbsp;&nbsp;</input>
+                <input class="sexradio " type="radio" name="sex" value="F"
+                    <?php
+                    if($this->userMessage->sex=='F') echo '"selected"=selected';
+                    ?>
+                    >&nbsp;女</input>
+                <br/><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生日：<input type="datetime" value="<?php echo $this->userMessage->birthday;?>" name="birthday"/>
+                <br/><br/>
+                个人简介：<input type="text" value="<?php echo $this->userMessage->introduce;?>" name="introduce"/>
+            </fieldset>
+            <br/><br/>
+            <fieldset>
+                <legend>联系信息</legend>
+                手机号码：<input type="text" name="phone" value="<?php echo $this->userMessage->phone;?>"/>
+                <br/><br/>
+                &nbsp;&nbsp;&nbsp;wechat：<input type="text" name="wechat" value="<?php echo $this->userMessage->wechat;?>"/>
+                <br/><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;微&nbsp;&nbsp;博： <input type="text" name="weibo" value="<?php echo $this->userMessage->weibo;?>"/>
+                <br/><br/>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-md-10 userMesForm"  id="modify">
+        <span class="glyphicon glyphicon-wrench spanIcon" aria-hidden="true" id="modifySpan">修改</span>
+
+        <form>
+            <fieldset>
+                <legend>基本信息</legend>
+                &nbsp;&nbsp用户名：&nbsp;&nbsp;   <?php echo $this->userMessage->username;?>
+                <br/><br/>
+                真实姓名：   <?php echo $this->userMessage->realname;?>
+
+                <br/><br/>
+                &nbsp;&nbsp&nbsp;&nbsp;性别：&nbsp;&nbsp;&nbsp;&nbsp;   <?php echo $this->userMessage->sex;?>
+
+                <br/><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生日：   <?php echo $this->userMessage->birthday;?>
+
+                <br/><br/>
+                个人简介：   <?php echo $this->userMessage->introduce;?>
+
+            </fieldset>
+            <br/><br/>
+            <fieldset>
+                <legend>联系信息</legend>
+                手机号码：   <?php echo $this->userMessage->phone;?>
+                <br/><br/>
+                &nbsp;&nbsp;&nbsp;wechat：   <?php echo $this->userMessage->wechat;?>
+                <br/><br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;微&nbsp;&nbsp;博：   <?php echo $this->userMessage->weibo;?>
+                <br/><br/>
+            </fieldset>
+        </form>
+   <?php /*var_dump($this->userMessage);*/?>
     </div>
 </div>

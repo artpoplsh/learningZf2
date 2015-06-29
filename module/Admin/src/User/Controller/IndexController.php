@@ -5,7 +5,7 @@
  * Date: 2015/4/22
  * Time: 21:08
  */
-namespace Meeting\Controller;
+namespace Admin\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 class IndexController extends AbstractActionController{

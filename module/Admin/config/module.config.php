@@ -17,10 +17,10 @@
      // The following section is new and should be added to your file
      'router' => array(
          'routes' => array(
-             'album' => array(
+             'Album' => array(
                  'type'    => 'segment',
                  'options' => array(
-                     'route'    => '/album[/:action][/:id]',
+                     'route'    => '/Album[/:action][/:id]',
                      'constraints' => array(
                          'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                          'id'     => '[0-9]+',
@@ -36,7 +36,7 @@
 
      'view_manager' => array(
          'template_path_stack' => array(
-             'album' => __DIR__ . '/../src/Album/view',
+             'Album' => __DIR__ . '/../src/Album/view',
          ),
      ),
  );

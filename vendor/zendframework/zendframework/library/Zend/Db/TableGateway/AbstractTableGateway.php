@@ -481,6 +481,7 @@ abstract class AbstractTableGateway implements TableGatewayInterface
         $this->resultSetPrototype = (isset($this->resultSetPrototype)) ? clone $this->resultSetPrototype : null;
         $this->sql = clone $this->sql;
         if (is_object($this->table)) {
+
             $this->table = clone $this->table;
         }
     }

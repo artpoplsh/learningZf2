@@ -10,23 +10,23 @@
  return array(
      'controllers' => array(
          'invokables' => array(
-             'Album\Controller\Album' => 'Album\Controller\AlbumController',
+             'Chat\Controller\Chat' => 'Chat\Controller\ChatController',
          ),
      ),
 
      // The following section is new and should be added to your file
      'router' => array(
          'routes' => array(
-             'album' => array(
+             'Chat' => array(
                  'type'    => 'segment',
                  'options' => array(
-                     'route'    => '/album[/:action][/:id]',
+                     'route'    => '/Chat[/:action][/:id]',
                      'constraints' => array(
                          'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                          'id'     => '[0-9]+',
                      ),
                      'defaults' => array(
-                         'controller' => 'Album\Controller\Album',
+                         'controller' => 'Chat\Controller\Chat',
                          'action'     => 'index',
                      ),
                  ),
@@ -36,7 +36,7 @@
 
      'view_manager' => array(
          'template_path_stack' => array(
-             'album' => __DIR__ . '/../src/Album/view',
+             'Chat' => __DIR__ .'/../src/Chat/view',
          ),
      ),
  );

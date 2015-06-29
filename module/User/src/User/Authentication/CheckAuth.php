@@ -9,6 +9,10 @@
 namespace User\Authentication;
 
 
-class CheckAuth {
+use Zend\EventManager\EventInterface;
 
+class CheckAuth {
+     public function checkAuth(EventInterface $e){
+
+     }
 }

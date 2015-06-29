@@ -1,9 +1,9 @@
 <?php 
-namespace Album\Model;
+namespace Chat\Model;
 
 use Zend\Db\TableGateway\TableGateway;
 
-class AlbumTable
+class FollowsTable
 {
     protected $tableGateway;
 
@@ -18,37 +18,41 @@ class AlbumTable
         return $resultSet;
     }
 
-    public function getAlbum($id)
+    public function getFollowsByUsername($username)
     {
-        $id  = (int) $id;
-        $rowset = $this->tableGateway->select(array('id' => $id));
-        $row = $rowset->current();
-        if (!$row) {
-            throw new \Exception("Could not find row $id");
-        }
-        return $row;
+
+        $rowset = $this->tableGateway->select(array('username' =>$username));
+        //$row = $rowset->current();
+       /* $arr=[];
+        while($row) {
+           //throw new \Exception("Could not find row ");
+
+            $arr=$row;
+            $row = $rowset->current();
+        }*/
+        return iterator_to_array($rowset);
     }
 
-    public function saveAlbum(Album $album)
+    public function saveChat(Chat $Chat)
     {
         $data = array(
-            'artist' => $album->artist,
-            'title'  => $album->title,
+            'artist' => $Chat->artist,
+            'title'  => $Chat->title,
         );
 
-        $id = (int) $album->id;
+        $id = (int) $Chat->id;
         if ($id == 0) {
             $this->tableGateway->insert($data);
         } else {
-            if ($this->getAlbum($id)) {
+            if ($this->getChat($id)) {
                 $this->tableGateway->update($data, array('id' => $id));
             } else {
-                throw new \Exception('Album id does not exist');
+                throw new \Exception('Chat id does not exist');
             }
         }
     }
 
-    public function deleteAlbum($id)
+    public function deleteChat($id)
     {
         $this->tableGateway->delete(array('id' => (int) $id));
     }

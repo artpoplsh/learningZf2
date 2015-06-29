@@ -1,0 +1,16 @@
+img.userImg{
+    width: 140px; 
+    height: 140px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+.userCenterNav{
+    margin: auto;
+    margin-left: 315px;
+
+}
+.userCenterNavRow{
+    background-color: #f3f3f3;
+}

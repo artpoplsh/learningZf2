@@ -59,18 +59,5 @@
          ],
      ],
 
-     'user' => [
-         'disabled_register'=>false,
-         'disabled_login'=>false
 
-     ],
-     'service_manager'=>[
-          'factories'=>[
-              'UserModuleOptions'=>'User\Service\Factory\UserModuleOptions',
-
-          ],
-         'invokables'=>[
-             'User\Table\UserTable'=>'User\Table\UserTable'
-         ]
-     ]
  ];

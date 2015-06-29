@@ -1,0 +1,12 @@
+#comment{
+    width: 50%;
+    height: 100px;
+}
+.content{
+    border: solid 1px;
+    padding: 2%;
+}
+.readable{
+    background-color: #f5f5f5;
+    padding: 15px 19px 9px;
+}
